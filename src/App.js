@@ -22,7 +22,7 @@ class App extends Component {
 			<Fragment>
 				{/* Fragments return children without adding extra node in actual DOM
 						Shorthand: <>...</> */}
-				<Header />
+				<Header heading="Phone Directory"/>
 				<div className="component-body-container">
 					<button className="custom-btn primary-btn">Add</button>
 					<div className="grid-container heading-container">
