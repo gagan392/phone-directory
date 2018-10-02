@@ -7,15 +7,12 @@ class App extends Component {
 			<Fragment>
 				{/* Fragments return children without adding extra node in actual DOM
 						Shorthand: <>...</> */}
-				{/* <div className="header">Phone Directory</div>
+				<Header />
 				<button>Add</button>
 				<div>
 					<span> Name: </span><br />
 					<span> Phone: </span>
-				</div> */}
-				<Header />
-				<label htmlFor="name">Name: </label>
-				<input type="text" id="name" placeholder="Type Here" defaultValue="Gagan" />
+				</div>
 			</Fragment>
 		);
 	}
