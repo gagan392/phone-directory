@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import Header from "./Header";
 
 class App extends Component {
 	render() {
@@ -12,8 +13,9 @@ class App extends Component {
 					<span> Name: </span><br />
 					<span> Phone: </span>
 				</div> */}
+				<Header />
 				<label htmlFor="name">Name: </label>
-				<input type="text" id="name" placeholder="Type Here" defaultValue="Gagan"/>
+				<input type="text" id="name" placeholder="Type Here" defaultValue="Gagan" />
 			</Fragment>
 		);
 	}
