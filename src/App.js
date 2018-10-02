@@ -3,6 +3,20 @@ import './App.css';
 import Header from "./Header";
 
 class App extends Component {
+
+	subscribers =[
+		{
+			id: 1,
+			name: "Gagan Raj M",
+			phone: "9999999999"
+		},
+		{
+			id: 2,
+			name: "Gagan Gowda",
+			phone: "8888888888"
+		}
+	]
+
 	render() {
 		return (
 			<Fragment>
@@ -15,6 +29,14 @@ class App extends Component {
 						<span className="item-grid item-heading"> Name: </span>
 						<span className="item-grid item-heading"> Phone: </span>
 					</div>
+					{
+						this.subscribers.map(item => {
+							return <div key={item.id} className="grid-container">
+								<span className="item-grid"> {item.name} </span>
+								<span className="item-grid"> {item.phone} </span>
+							</div>
+						})
+					}
 				</div>
 			</Fragment>
 		);
