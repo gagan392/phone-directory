@@ -1,28 +1,3 @@
-.component-body-container {
-	padding: 10px
-}
-
-.custom-btn {
-    padding: 10px;
-    margin-right: 10px;
-	border: none;
-    text-transform: uppercase;
-	font-size: 0.9rem;
-	cursor: pointer;
-	outline: none;
-}
-
-.primary-btn {
-	background-color: #026BC8;
-	color: #fff;
-}
-
-.secondary-btn {
-	background-color: #fff;
-	color: #000;
-	border: #026BC8 solid 1px;
-}
-
 .grid-container {
 	display: grid;
 	grid-template-columns: 40% 30% auto;

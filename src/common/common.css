@@ -1,0 +1,25 @@
+.component-body-container {
+	padding: 20px
+}
+
+.custom-btn {
+    padding: 10px;
+    border: none;
+    margin-right: 10px;
+    text-transform: uppercase;
+    width: 80px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.primary-btn {
+	background-color: #026BC8;
+	color: #fff;
+}
+
+.secondary-btn {
+	background-color: #fff;
+	color: #000;
+	border: #026BC8 solid 1px;
+}
