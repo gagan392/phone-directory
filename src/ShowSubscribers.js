@@ -1,21 +1,16 @@
 import React, { Component, Fragment } from 'react';
-import './App.css';
+import './ShowSubscribers.css';
 import Header from "./Header";
+import { Link } from 'react-router-dom';
 
-class App extends Component {
+class ShowSubscribers extends Component {
 
-	subscribers =[
-		{
-			id: 1,
-			name: "Gagan Raj M",
-			phone: "9999999999"
-		},
-		{
-			id: 2,
-			name: "Gagan Gowda",
-			phone: "8888888888"
-		}
-	]
+	deleteHandler(item) {
+		this.setState((previousState) => ({
+				subscribers: previousState.subscribers.filter(sub => sub.id !== item.id)
+			})
+		);
+	}
 
 	render() {
 		return (
@@ -24,18 +19,18 @@ class App extends Component {
 						Shorthand: <>...</> */}
 				<Header heading="Phone Directory"/>
 				<div className="component-body-container">
-					<button className="custom-btn primary-btn">Add</button>
+					<Link to="/add"><button className="custom-btn primary-btn">Add</button></Link>
 					<div className="grid-container heading-container">
 						<span className="item-grid item-heading"> Name: </span>
 						<span className="item-grid item-heading"> Phone: </span>
 					</div>
 					{
-						this.subscribers.map(item => {
+						this.props.subscribersList.map(item => {
 							return <div key={item.id} className="grid-container">
 								<span className="item-grid"> {item.name} </span>
 								<span className="item-grid"> {item.phone} </span>
 								<span className="item-grid">
-									<button className="custom-btn secondary-btn">Delete</button>
+									<button className="custom-btn secondary-btn" onClick={this.deleteHandler.bind(this, item)}>Delete</button>
 								</span>
 							</div>
 						})
@@ -46,4 +41,4 @@ class App extends Component {
 	}
 }
 
-export default App;
+export default ShowSubscribers;
