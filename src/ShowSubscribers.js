@@ -5,11 +5,8 @@ import { Link } from 'react-router-dom';
 
 class ShowSubscribers extends Component {
 
-	deleteHandler(item) {
-		this.setState((previousState) => ({
-				subscribers: previousState.subscribers.filter(sub => sub.id !== item.id)
-			})
-		);
+	deleteHandler = (subId) => {
+		this.props.deleteSubscriberHandler(subId);
 	}
 
 	render() {
@@ -25,12 +22,12 @@ class ShowSubscribers extends Component {
 						<span className="item-grid item-heading"> Phone: </span>
 					</div>
 					{
-						this.props.subscribersList.map(item => {
-							return <div key={item.id} className="grid-container">
-								<span className="item-grid"> {item.name} </span>
-								<span className="item-grid"> {item.phone} </span>
+						this.props.subscribersList.map(sub => {
+							return <div key={sub.id} className="grid-container">
+								<span className="item-grid"> {sub.name} </span>
+								<span className="item-grid"> {sub.phone} </span>
 								<span className="item-grid">
-									<button className="custom-btn secondary-btn" onClick={this.deleteHandler.bind(this, item)}>Delete</button>
+									<button className="custom-btn secondary-btn" onClick={this.deleteHandler.bind(this, sub.id)}>Delete</button>
 								</span>
 							</div>
 						})
