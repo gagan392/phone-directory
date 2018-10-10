@@ -23,6 +23,7 @@ class AddSubscriber extends Component {
 	onFormSubmitHandler = (e) => {
 		e.preventDefault();
 		if(!this.state.name || !this.state.phone) {
+			this.props.history.push("/");
 			return;
 		}
 		this.props.addSubscriberHandler(this.state);
